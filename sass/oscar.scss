@@ -1,0 +1,26 @@
+.oscar {
+  margin: 50px auto 30px;
+  display: flex;
+  width: 965px;
+  height: 200px;
+  position: relative;
+
+  & .oscar__texte {
+    padding: 1.8em 2em;
+    width: 643px;
+    height: 187px;
+    font-size: 2rem;
+    background-image: url("assets/images/rectangle.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff5e9;
+    p {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+  & .oscar__logo {
+    width: 278px;
+    height: 129px;
+  }
+}
