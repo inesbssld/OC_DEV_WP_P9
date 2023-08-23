@@ -44,3 +44,43 @@ section {
 
 /** section oscar**/
 @import "oscar";
+
+/** animations fleurs **/
+
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.site-footer ul::after {
+  animation: rotate 5s linear infinite;
+}
+
+/**animation titres**/
+
+/* lineup class and keyframes */
+
+//class specofoque pour l'animation à ajouter aux titres
+
+@keyframes animationTitre {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  20% {
+    opacity: 0.5;
+    transform: translateY(80%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animation-titre.animate {
+  display: inline-block;
+  animation: animationTitre 500ms ease-out;
+}

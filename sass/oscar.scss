@@ -1,26 +1,66 @@
 .oscar {
-  margin: 50px auto 30px;
+  margin-top: 2em;
   display: flex;
-  width: 965px;
-  height: 200px;
   position: relative;
+  justify-content: center;
+  align-items: center;
 
   & .oscar__texte {
-    padding: 1.8em 2em;
-    width: 643px;
-    height: 187px;
-    font-size: 2rem;
-    background-image: url("assets/images/rectangle.png");
+    width: 752px;
+    height: 450px;
+    font-size: 2.8rem;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+    line-height: 53px;
+    letter-spacing: -0.02em;
+    background-image: url(assets/images/rectangle.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     color: #fff5e9;
-    p {
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    padding-top: 3.4em;
+    text-align: left;
+
+    &::before {
+      content: url(../foce/assets/images/Sunflower.png);
+      position: absolute;
+      left: 4em;
+      top: 0em;
+      animation: rotate 5s linear infinite; /* 5s pour une rotation complète en 5 secondes */
     }
   }
+
   & .oscar__logo {
     width: 278px;
     height: 129px;
+
+    &::after {
+      content: url(../foce/assets/images/orchid.png);
+      position: absolute;
+      right: -4em;
+      bottom: 25.8em;
+      animation: rotate 5s linear infinite;
+    }
   }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.site-footer::before {
+  display: none;
+}
+.site-footer::after {
+  display: none;
+}
+
+section {
+  overflow: visible !important; /* ou overflow: auto; pour ajouter des barres de défilement si nécessaire */
 }
