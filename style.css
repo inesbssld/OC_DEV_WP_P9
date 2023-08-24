@@ -136,3 +136,24 @@ section {
   display: inline-block;
   animation: animationTitre 500ms ease-out;
 }
+
+/** video banner **/
+#background-video {
+  width: 100%;
+  position: relative;
+  margin-left: 10px;
+  z-index: -1;
+}
+
+.banner__content {
+  position: absolute;
+  width: 761px;
+  height: 500px;
+}
+.banner__content--image {
+  width: 100% !important;
+}
+
+.banner {
+  background-image: none;
+}
