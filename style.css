@@ -15,14 +15,19 @@ section {
 }
 section.banner {
   overflow: hidden;
-  animation: fadeInAnimation ease 4s;
 }
 section.banner img {
   opacity: 0;
-  transform: translateY(0px);
-  animation: bannerAnimation ease 4s forwards, fadeInAnimation ease 4s forwards;
+  transform: translateY(100px);
+  animation: fadeInAnimation ease 4s forwards, floatAnimation 3s infinite ease-in-out both;
 }
 
+/* animation pour le titre principal */
+.banner__content {
+  animation: animationTitre 2s ease-out forwards;
+}
+
+/* animation fadeIN*/
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
@@ -31,15 +36,28 @@ section.banner img {
     opacity: 1;
   }
 }
-@keyframes bannerAnimation {
+/* animation flottement sur le titre principal */
+@keyframes floatAnimation {
   0% {
-    transform: translateY(0px);
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
   }
   100% {
-    transform: translateY(0px);
+    transform: translate(0);
   }
 }
-/** section oscar**/
+/** SECTION OSCAR **/
 .oscar {
   margin-top: 2em;
   display: flex;
@@ -103,7 +121,7 @@ section {
   overflow: visible !important; /* ou overflow: auto; pour ajouter des barres de défilement si nécessaire */
 }
 
-/** animations fleurs **/
+/** ANIMATIONS FLEURS **/
 .story h2::after,
 .story__article::after,
 #studio h2::before,
@@ -112,8 +130,7 @@ section {
   animation: rotate 5s linear infinite;
 }
 
-/**animation titres**/
-/* lineup class and keyframes */
+/** ANIMATION TITRES SECTIONS **/
 @keyframes animationTitre {
   0% {
     opacity: 0;
@@ -137,14 +154,7 @@ section {
   animation: animationTitre 500ms ease-out;
 }
 
-/** video banner **/
-#background-video {
-  width: 100%;
-  position: relative;
-  margin-left: 10px;
-  z-index: -1;
-}
-
+/****** VIDEO BANNER *******/
 .banner__content {
   position: absolute;
   width: 761px;
@@ -154,6 +164,70 @@ section {
   width: 100% !important;
 }
 
+@media only screen and (max-width: 700px) {
+  #background-video {
+    display: none;
+  }
+  .banner {
+    background-image: url(/wp-content/themes/foce/assets/images/banner.png) !important;
+  }
+}
 .banner {
   background-image: none;
+}
+
+/****** ANIMATION NUAGES *****/
+.story #place {
+  background-image: url(/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png);
+  position: relative;
+}
+
+.place__nuages {
+  position: absolute;
+  width: 554px;
+  height: 265px;
+  top: 65px;
+  right: 0;
+}
+.place__nuages--image {
+  transform: translateX(0%); /* Position initiale à droite */
+  transition: transform 1.5s ease-out;
+}
+
+/********* CAROUSSEL ************/
+.story #characters {
+  display: flex;
+  flex-direction: column !important;
+}
+.story #characters h3 {
+  position: absolute;
+  left: 50px;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.swiper .swiper-wrapper {
+  display: flex;
+  margin: 50px;
+}
+.swiper p {
+  font-size: 20px;
+  font-family: roboto, sans-serif;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
 }

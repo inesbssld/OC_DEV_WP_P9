@@ -1,0 +1,36 @@
+.story #characters {
+  display: flex;
+  flex-direction: column !important;
+}
+.story #characters h3 {
+  position: absolute;
+  left: 50px;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.swiper .swiper-wrapper {
+  display: flex;
+  margin: 50px;
+}
+.swiper p {
+  font-size: 20px;
+  font-family: roboto, sans-serif;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}

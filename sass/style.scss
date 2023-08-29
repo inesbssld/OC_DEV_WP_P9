@@ -15,16 +15,22 @@ section {
   overflow: hidden;
   &.banner {
     overflow: hidden;
-    animation: fadeInAnimation ease 4s;
+
     img {
       opacity: 0;
-      transform: translateY(0px);
-
-      animation: bannerAnimation ease 4s forwards,
-        fadeInAnimation ease 4s forwards;
+      transform: translateY(100px);
+      animation: fadeInAnimation ease 4s forwards,
+        floatAnimation 3s infinite ease-in-out both;
     }
   }
 }
+/* animation pour le titre principal */
+.banner__content {
+  animation: animationTitre 2s ease-out forwards;
+}
+
+/* animation fadeIN*/
+
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
@@ -33,19 +39,41 @@ section {
     opacity: 1;
   }
 }
-@keyframes bannerAnimation {
+
+/* animation flottement sur le titre principal */
+
+@keyframes floatAnimation {
   0% {
-    transform: translateY(0px);
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
   }
   100% {
-    transform: translateY(0px);
+    -webkit-transform: translate(0);
+    transform: translate(0);
   }
 }
 
-/** section oscar**/
+/** SECTION OSCAR **/
+
 @import "oscar";
 
-/** animations fleurs **/
+/** ANIMATIONS FLEURS **/
 
 .story h2::after,
 .story__article::after,
@@ -55,11 +83,7 @@ section {
   animation: rotate 5s linear infinite;
 }
 
-/**animation titres**/
-
-/* lineup class and keyframes */
-
-//class specofoque pour l'animation à ajouter aux titres
+/** ANIMATION TITRES SECTIONS **/
 
 @keyframes animationTitre {
   0% {
@@ -85,13 +109,8 @@ section {
   animation: animationTitre 500ms ease-out;
 }
 
-/** video banner **/
-#background-video {
-  width: 100%;
-  position: relative;
-  margin-left: 10px;
-  z-index: -1;
-}
+/****** VIDEO BANNER *******/
+
 .banner__content {
   position: absolute;
   width: 761px;
@@ -100,7 +119,38 @@ section {
     width: 100% !important;
   }
 }
+@media only screen and (max-width: 700px) {
+  #background-video {
+    display: none;
+  }
+  .banner {
+    background-image: url(/wp-content/themes/foce/assets/images/banner.png) !important;
+  }
+}
 
 .banner {
   background-image: none;
 }
+
+/****** ANIMATION NUAGES *****/
+
+.story #place {
+  background-image: url(/wp-content/themes/foce-child/assets/images/Studio_Koukaki-image_place.png);
+  position: relative;
+}
+.place__nuages {
+  position: absolute;
+  width: 554px;
+  height: 265px;
+  top: 65px;
+  right: 0;
+
+  &--image {
+    transform: translateX(0%); /* Position initiale à droite */
+    transition: transform 1.5s ease-out;
+  }
+}
+
+/********* CAROUSSEL ************/
+
+@import "slider";

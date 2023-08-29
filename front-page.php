@@ -12,8 +12,6 @@ get_header();
 
         </video>
 
-         
-
         <div class="banner__content">
 
 
@@ -43,6 +41,10 @@ get_header();
             $characters_query = new WP_Query($args);
             ?>
         <article id="characters">
+
+
+            <?php get_template_part( 'template-parts/slider' ); ?>
+            <!--
             <div class="main-character">
                 <h3>Les personnages</h3>
                 <?php
@@ -66,11 +68,22 @@ get_header();
                         echo '</figure>';
                     }
                     ?>
-            </div>
+            </div> -->
         </article>
         <article id="place">
             <div>
                 <h3>Le Lieu</h3>
+                <div class="place__nuages">
+                <img class="place__nuages--image" src="/wp-content/themes/foce-child/assets/images/Nuages.png"
+                    alt="image de deux nuages qui bougent à gauche avec ke scroll"></div>
+                <!--
+
+                <img class="place__grosNuage" src="/wp-content/themes/foce-child/assets/images/big_cloud.png"
+                    alt="image d'un gros nuage">
+                <img class="place__petitNuage" src="/wp-content/themes/foce-child/assets/images/little_cloud.png"
+                    alt="image d'un petit nuage">
+
+                -->
                 <p><?php echo get_theme_mod('place'); ?></p>
             </div>
 
