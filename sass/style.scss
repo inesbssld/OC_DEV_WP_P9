@@ -8,39 +8,29 @@
  Version: 0.1
  */
 
+/******** MENU ***********/
+
+@import "menu";
+
 /*fade in entrée*/
 
 section {
-  animation: fadeInAnimation ease 4s;
+  animation: fadeInAnimation ease 2s;
   overflow: hidden;
-  &.banner {
-    overflow: hidden;
-
-    img {
-      opacity: 0;
-      transform: translateY(100px);
-      animation: fadeInAnimation ease 4s forwards,
-        floatAnimation 3s infinite ease-in-out both;
-    }
-  }
-}
-/* animation pour le titre principal */
-.banner__content {
-  animation: animationTitre 2s ease-out forwards;
 }
 
 /* animation fadeIN*/
 
 @keyframes fadeInAnimation {
   0% {
-    opacity: 0;
+    opacity: 0.2;
   }
   100% {
     opacity: 1;
   }
 }
 
-/* animation flottement sur le titre principal */
+/* animation flottement sur le titre principal*/
 
 @keyframes floatAnimation {
   0% {
@@ -104,21 +94,48 @@ section {
   }
 }
 
-.animation-titre.animate {
-  display: inline-block;
-  animation: animationTitre 500ms ease-out;
+@keyframes animationBanner {
+  0% {
+    transform: translateY(-30%);
+  }
+  20% {
+    transform: translateY(-20%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-/****** VIDEO BANNER *******/
+.animation-titre.animate {
+  display: inline-block;
+  animation: animationTitre 600ms ease-out;
+}
+
+/****** BANNER *******/
+
+video {
+  animation: animationBanner 800ms ease-out forwards;
+}
 
 .banner__content {
   position: absolute;
   width: 761px;
   height: 500px;
+  animation: animationTitre 2s ease-out forwards;
+  // animation pour le titre principal
+  /* animation: fadeInAnimation ease 4s forwards;*/
   &--image {
     width: 100% !important;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: fadeInAnimation ease 4s forwards,
+      floatAnimation 3s infinite ease-in-out both;
   }
 }
+
 @media only screen and (max-width: 700px) {
   #background-video {
     display: none;
@@ -130,6 +147,10 @@ section {
 
 .banner {
   background-image: none;
+}
+
+.story {
+  margin-top: -30x !important;
 }
 
 /****** ANIMATION NUAGES *****/

@@ -1,0 +1,169 @@
+@charset "UTF-8";
+@media screen and (min-width: 700px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+.main-navigation .line {
+  height: 2px;
+  margin-block: 8px;
+  width: 40px;
+}
+.main-navigation ul {
+  height: 60%;
+}
+
+.site-title {
+  list-style-type: none;
+}
+
+.menu__close {
+  margin-left: auto;
+  width: 62%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-toggle {
+  margin-right: 50px !important;
+}
+
+/* Création du bouton pour fermer */
+.menu-toggle.close .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.close .line:first-child {
+  transform: rotate(45deg) translate3d(8px, 6px, 0);
+}
+
+.menu-toggle.close span.line:last-child {
+  transform: rotate(-45deg) translate3d(8px, -6px, 0);
+}
+
+.menu__open {
+  display: none;
+  width: 100%; /* Largeur initiale à 100% pour le fondu */
+  position: absolute;
+  top: 80px;
+  height: 100vh;
+  background-color: #fff5e9; /* Couleur d'arrière-plan, adaptez-la à votre conception */
+  z-index: 9999; /* Assurez-vous qu'il est au-dessus de tout autre contenu */
+  animation: fadeInAnimation ease 2s;
+}
+.menu__open--content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+}
+.menu__open--content--footer {
+  margin-bottom: 40px;
+}
+.menu__open--content--logo {
+  margin: 20px;
+  width: 154px;
+}
+
+.menu__open ul {
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.menu__open ul li {
+  margin: 20px;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.4em;
+  text-align: center;
+}
+.menu__open ul li a {
+  animation: animationTitreMenu 2s ease-out;
+}
+.menu__open ul li:hover {
+  text-shadow: 0 0 14px #ff5c00;
+}
+.menu__open ul li a:hover {
+  text-shadow: 0 0 14px #ff5c00;
+}
+.menu__open ul li.story::after {
+  content: url(/wp-content/themes/foce-child/assets/images/Sunflower.png);
+  position: absolute;
+  left: 9em;
+  top: -2em;
+  animation: rotate 5s linear infinite;
+}
+.menu__open ul li.story::before {
+  content: url(/wp-content/themes/foce-child/assets/images/blue_cat.png);
+  position: absolute;
+  left: -3.3em;
+  top: -1em;
+  animation: floatAnimation 3s infinite ease-in-out both;
+}
+.menu__open ul li.characters::after {
+  content: url(/wp-content/themes/foce-child/assets/images/grey_cat.png);
+  position: absolute;
+  left: 9.7em;
+  top: 1em;
+  animation: floatAnimation 3s infinite ease-in-out both;
+}
+.menu__open ul li.characters::before {
+  content: url(/wp-content/themes/foce-child/assets/images/flower_s.png);
+  position: absolute;
+  left: -4.3em;
+  top: 1em;
+  animation: rotate 5s linear infinite;
+}
+.menu__open ul li.place::after {
+  content: url(/wp-content/themes/foce-child/assets/images/random_flower_s.png);
+  position: absolute;
+  left: 16em;
+  top: -1em;
+  animation: rotate 5s linear infinite;
+}
+.menu__open ul li.place::before {
+  content: url(/wp-content/themes/foce-child/assets/images/orange_cat.png);
+  position: absolute;
+  left: -6.3em;
+  top: 3em;
+  animation: floatAnimation 3s infinite ease-in-out both;
+}
+.menu__open ul li.studio::after {
+  content: url(/wp-content/themes/foce-child/assets/images/hibiscus_footer.png);
+  position: absolute;
+  left: 11.7em;
+  top: -1em;
+  animation: rotate 5s linear infinite;
+}
+.menu__open ul li.studio::before {
+  content: url(/wp-content/themes/foce-child/assets/images/orchid.png);
+  position: absolute;
+  left: -9.3em;
+  top: -7.8em;
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes animationTitreMenu {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  20% {
+    opacity: 0.5;
+    transform: translateY(150px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

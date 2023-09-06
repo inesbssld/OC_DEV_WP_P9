@@ -6,24 +6,19 @@ get_header();
 <main id="primary" class="site-main">
     <section class="banner">
 
-        <video id="background-video" autoplay loop muted>
-
-            <source src="/wp-content/themes/foce-child/assets/images/koukaki_video.mp4" type="video/mp4">
-
-        </video>
-
+        <div class="background" data-0="transform:translateY(0px)" data-50="transform:translateY(-45px)"
+            data-100="transform:translateY(-100px)" data-150="transform:translateY(-150px)">
+            <video id="background-video" autoplay loop muted>
+                <source src="/wp-content/themes/foce-child/assets/images/koukaki_video.mp4" type="video/mp4">
+            </video>
+        </div>
         <div class="banner__content">
-
-
-            <img class="banner__content--image"
+            <img class=" banner__content--image"
                 src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> "
                 alt="logo Fleurs d'oranger & chats errants">
-
-            <!--   <button id="btnVideo" onclick="playAndPause()">Pause II</button>-->
-
         </div>
-        <!-- <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> "
-            alt="logo Fleurs d'oranger & chats errants">-->
+
+
     </section>
     <section id="story" class="story">
         <h2>L'histoire</h2>
@@ -42,40 +37,16 @@ get_header();
             ?>
         <article id="characters">
 
-
             <?php get_template_part( 'template-parts/slider' ); ?>
-            <!--
-            <div class="main-character">
-                <h3>Les personnages</h3>
-                <?php
-                    $main_character = $characters_query->posts[0];
-                    echo '<figure>';
-                    echo get_the_post_thumbnail( $main_character->ID, 'full' );
-                    echo '<figcaption>'. $main_character->post_title . '</figcaption>';
-                    echo '</figure>';
-                    $characters_query->next_post();
-                    ?>
-            </div>
-            <div class="other-characters">
-                <?php
-                    while ( $characters_query->have_posts() ) {
-                        $characters_query->the_post();
-                        echo '<figure>';
-                        echo get_the_post_thumbnail( get_the_ID(), 'full' );
-                        echo '<figcaption>';
-                        the_title();
-                        echo'</figcaption>';
-                        echo '</figure>';
-                    }
-                    ?>
-            </div> -->
+
         </article>
         <article id="place">
             <div>
                 <h3>Le Lieu</h3>
                 <div class="place__nuages">
-                <img class="place__nuages--image" src="/wp-content/themes/foce-child/assets/images/Nuages.png"
-                    alt="image de deux nuages qui bougent à gauche avec ke scroll"></div>
+                    <img class="place__nuages--image" src="/wp-content/themes/foce-child/assets/images/Nuages.png"
+                        alt="image de deux nuages qui bougent à gauche avec ke scroll">
+                </div>
                 <!--
 
                 <img class="place__grosNuage" src="/wp-content/themes/foce-child/assets/images/big_cloud.png"
@@ -105,6 +76,8 @@ get_header();
                 errants”.</p>
         </div>
     </section>
+
+    <!--section oscar-->
 
     <?php get_template_part( 'template-parts/oscar' ); ?>
 
