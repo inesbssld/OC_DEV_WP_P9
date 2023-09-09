@@ -59,5 +59,16 @@
 }
 
 section {
-  overflow: visible !important; /* ou overflow: auto; pour ajouter des barres de défilement si nécessaire */
+  overflow: visible !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .oscar .oscar__texte {
+    width: 667px;
+    font-size: 2.4rem;
+    padding-top: 4.4em;
+  }
+  .oscar .oscar__texte::before {
+    top: -1em;
+  }
 }

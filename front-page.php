@@ -10,6 +10,8 @@ get_header();
             data-100="transform:translateY(-100px)" data-150="transform:translateY(-150px)">
             <video id="background-video" autoplay loop muted>
                 <source src="/wp-content/themes/foce-child/assets/images/koukaki_video.mp4" type="video/mp4">
+                <img src="/wp-content/themes/foce/assets/images/banner.png"
+                    alt="image du film d'namiation fleurs d'orranger et chats errants">
             </video>
         </div>
         <div class="banner__content">
@@ -45,16 +47,8 @@ get_header();
                 <h3>Le Lieu</h3>
                 <div class="place__nuages">
                     <img class="place__nuages--image" src="/wp-content/themes/foce-child/assets/images/Nuages.png"
-                        alt="image de deux nuages qui bougent à gauche avec ke scroll">
+                        alt="image de deux nuages qui bougent à gauche avec le scroll">
                 </div>
-                <!--
-
-                <img class="place__grosNuage" src="/wp-content/themes/foce-child/assets/images/big_cloud.png"
-                    alt="image d'un gros nuage">
-                <img class="place__petitNuage" src="/wp-content/themes/foce-child/assets/images/little_cloud.png"
-                    alt="image d'un petit nuage">
-
-                -->
                 <p><?php echo get_theme_mod('place'); ?></p>
             </div>
 

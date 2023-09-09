@@ -1,44 +1,32 @@
 // ANIMATION TITRES
 
-// Sélection de tous les titres de sections à animer
 const sectionTitles = document.querySelectorAll(
   ".story h2, #characters h3, #place h3, #studio h2"
 );
-
-// Create the observer
 const observer = new IntersectionObserver((entries) => {
-  // Loop over the entries
   entries.forEach((entry) => {
-    // If the element is visible
     if (entry.isIntersecting) {
-      // Add a class to the title's text element
       entry.target.querySelector(".animation-titre").classList.add("animate");
-      // Stop observing once animation is applied to prevent repetition
       observer.unobserve(entry.target);
-      return; // if we added the class, exit the function
+      return;
     }
-
-    // We're not intersecting, so remove the class!
     entry.target.querySelector(".animation-titre").classList.remove("animate");
   });
 });
 
-// Tell the observer which elements to track (the titles)
 sectionTitles.forEach((title) => {
   const span = document.createElement("span");
   span.textContent = title.textContent;
   span.classList.add("animation-titre");
-  title.innerHTML = ""; // Effacer le contenu original du titre
-  title.appendChild(span); // Ajouter le span au titre
+  title.innerHTML = "";
+  title.appendChild(span);
 
   observer.observe(title);
 });
 
-// Tell the observer which elements to track (the titles)
 sectionTitles.forEach((title) => {
   observer.observe(title);
 });
-
 // PARALLAX BANNER VIDEO - TITRE
 
 var s = skrollr.init();
@@ -74,7 +62,7 @@ new simpleParallax(imageElement, {
 });
 */
 
-// PARALLAX NUAGES
+// Animation NUAGES
 
 const nuageImage = document.querySelector(".place__nuages--image");
 const options = {
@@ -84,7 +72,7 @@ const options = {
 const nuagesObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      const newPosition = Math.min(0, -550); // Déplace de 550px vers la gauche
+      const newPosition = Math.min(0, -300); // Déplace de 300px vers la gauche
       nuageImage.style.transform = `translateX(${newPosition}px)`;
     }
   });
@@ -115,33 +103,25 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 // MENU
-// Sélectionnez le bouton par son sélecteur de classe
+
 const menuToggle = document.querySelector(".menu-toggle");
 const menuOpen = document.querySelector(".menu__open");
 
-// Ajoutez un gestionnaire d'événement clic au bouton
 menuToggle.addEventListener("click", function () {
-  // Inversez la classe "close" sur le bouton pour indiquer si le menu est ouvert
   menuToggle.classList.toggle("close");
 
-  // Inversez la propriété "display" du menu pour afficher ou masquer le menu
   if (menuToggle.classList.contains("close")) {
-    menuOpen.style.display = "block"; // Le menu est ouvert, affichez-le
+    menuOpen.style.display = "block";
   } else {
-    menuOpen.style.display = "none"; // Le menu est fermé, masquez-le
+    menuOpen.style.display = "none";
   }
 });
 
-// Sélectionnez tous les liens du menu
 const menuLinks = document.querySelectorAll(".menu__open ul li a");
 
-// Ajoutez un gestionnaire d'événement clic à chaque lien
 menuLinks.forEach((link) => {
   link.addEventListener("click", function () {
-    // Fermez le menu en masquant la div .menu__open
     menuOpen.style.display = "none";
-
-    // Assurez-vous de retirer la classe "close" du bouton toggle
     menuToggle.classList.remove("close");
   });
 });

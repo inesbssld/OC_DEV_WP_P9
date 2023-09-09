@@ -4,6 +4,9 @@
   }
 }
 .main-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   & .line {
     height: 2px;
     margin-block: 8px;
@@ -15,15 +18,17 @@
 }
 .site-title {
   list-style-type: none;
+  text-align: center;
+  flex: 1;
 }
 
 .menu__close {
   margin-left: auto;
-  width: 62%;
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .menu-toggle {
@@ -44,15 +49,13 @@
 
 .menu__open {
   display: none;
-  width: 100%; /* Largeur initiale à 100% pour le fondu */
+  width: 100%;
   position: absolute;
   top: 80px;
-
   height: 100vh;
-  background-color: #fff5e9; /* Couleur d'arrière-plan, adaptez-la à votre conception */
-  z-index: 9999; /* Assurez-vous qu'il est au-dessus de tout autre contenu */
+  background-color: #fff5e9;
+  z-index: 9999;
   animation: fadeInAnimation ease 2s;
-
   &--content {
     display: flex;
     flex-direction: column;
@@ -79,7 +82,7 @@
 
 .menu__open ul li {
   margin: 20px;
-  font-size: 60px;
+  font-size: 4em;
   font-weight: 400;
   line-height: 1.4em;
   text-align: center;
@@ -167,5 +170,37 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/****** MEDIA QUERIES *****/
+
+@media screen and (max-width: 1000px) {
+  .menu-toggle {
+    margin-right: 5px !important;
+  }
+
+  .menu__open ul li {
+    font-size: 3em;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .menu__open ul li {
+    font-size: 2em;
+  }
+  .characters::after {
+    display: none;
+  }
+  .characters::before {
+    display: none;
+  }
+  .menu__open ul li.studio::before {
+    left: -13.3em;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .menu__open ul li {
+    font-size: 1.8em;
   }
 }
